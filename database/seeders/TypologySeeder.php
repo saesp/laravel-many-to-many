@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Typology;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -14,6 +15,6 @@ class TypologySeeder extends Seeder
      */
     public function run()
     {
-        //
+        Typology::factory()-> count(50)-> create();
     }
 }
