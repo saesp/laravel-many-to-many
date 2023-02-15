@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Typology extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        
+        'code',
+        'name',
+        'digital',
+    ];
+
+    // ONE (typology) to MANY (products)
+    public function products() {
+        return $this -> hasMany(Product :: class);
+    }
 }

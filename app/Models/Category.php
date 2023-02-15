@@ -15,10 +15,9 @@ class Category extends Model
         'description',
     ];
 
+    // MANY (categories) to MANY (products)
     public function products(){
-
         // return $this->belongsToMany('App\Models\Product');
         return $this->belongsToMany(Product::class);
-
     }
 }

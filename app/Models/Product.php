@@ -9,7 +9,21 @@ class Product extends Model
 {
     use HasFactory;
 
-    public function categories(){
-        return $this->belongsToMany('App\Models\Category');
+    protected $fillable = [
+        'code',
+        'name',
+        'description',
+        'price',
+        'weight',
+    ];
+
+    // many (products) to many (categories)
+    public function categories() {
+        return $this -> belongsToMany(Category :: class);
+    }
+
+    // many (products) to one (typology)
+    public function typology() {
+        return $this -> belongsTo(Typology :: class);
     }
 }

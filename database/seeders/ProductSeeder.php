@@ -27,8 +27,8 @@ class ProductSeeder extends Seeder
             $p-> save();
 
             // NtoM
-            $categories = Category::inRandomOrder()-> limit(rand(1,5))-> get();
-            $p-> categories()-> attach($categories);;
+            $categories = Category::inRandomOrder()-> limit(rand(1, 5))-> get();
+            $p-> categories()-> attach($categories);
 
         });
     }
